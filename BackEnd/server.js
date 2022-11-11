@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 4000 //change port - seperate app - both cant run on 3000 
+const port = 4000 //change port - they are seperate apps - both cant run on local:3000 
 var bodyParser = require('body-parser')
 
 // parse application/x-www-form-urlencoded
@@ -8,7 +8,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-
+//Will get error without CORS
+//Cors - Read JSON from Express server 
 const cors = require('cors');
 app.use(cors());
 app.use(function(req, res, next) {
@@ -27,7 +28,7 @@ app.post('/api/books', (req,res)=>{
     console.log(req.body);
     res.send('Data Recieved');
 })
-
+//Show Books in read/api/books in server
 app.get('/api/books', (req, res)=>{
     const books = [
         {
