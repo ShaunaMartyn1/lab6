@@ -4,17 +4,18 @@ import axios from "axios";
 
 export class Read extends React.Component{
 
-    /* reads in data from URL   */
+    // reads in data from URL   
     componentDidMount() {
+        //Change to new URL - books array using axios 
         axios.get('http://localhost:4000/api/books')
         .then((response)=> {
-            this.setState({books:response.data.myBooks})
+            this.setState({books:response.data.myBooks})//change to myBooks
         })
         .catch((error)=>{
-            console.log(error);/*log errors to console*/
+            console.log(error);//log errors to console
         });
     }
-    /* Empty array of books  */
+    // Empty array of books  
     state = {
         books:[]
             
