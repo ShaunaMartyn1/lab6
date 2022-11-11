@@ -17,12 +17,14 @@ export class Create extends React.Component{
         }
         
     }
+    //Use handlesubmit to get current value of state and adds it to the array
     handleSubmit(e) {
         e.preventDefault();
         console.log(`${this.state.title},
         ${this.state.cover}, 
         ${this.state.author}`)
         
+        //Update form 
         const book = {
             title:this.state.title,
             cover:this.state.cover,
@@ -82,7 +84,7 @@ export class Create extends React.Component{
                     />
             </div>
 
-                
+                //Add book Button 
                 <input type="submit" value="Add Book" /> 
                 </form>
             </div>
